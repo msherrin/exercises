@@ -1,24 +1,24 @@
-module.exports.getKeys = function(object) {
-  var myArray = [];
+module.exports.copy = function(object) {
+  var myObject = {};
   for (var prop in object) {
-    myArray.push(prop);
-  }
-  return myArray;
-}
+    myObject[prop] = object[prop];
+  };
+  return myObject;
+};
 
-module.exports.getValues = function(object) {
-  var myArray = [];
-  for (var prop in object) {
-    myArray.push(object[prop]);
-  }
-  return myArray;
-}
+module.exports.extend = function(dest, src) {
+  var dest = dest;
+  for (var prop in src) {
+    dest[prop] = src[prop];
+  };
+  return dest;
+};
 
-module.exports.objectToArray = function(object) {
-  var myArray = [];
-  for (var prop in object) {
-    var stringed = prop + " is " + object[prop];
-    myArray.push(stringed);
-  }
-  return myArray;
-}
+module.exports.hasElems = function(obj, array) {
+  for (var i = 0; i < array.length; i++) {
+    if (obj[array[i]] == undefined) {
+      return false;
+    };
+  };
+  return true;
+};
