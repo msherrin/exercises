@@ -1,4 +1,4 @@
-odule.exports.reversePlusOne = function(r) {
+module.exports.reversePlusOne = function(r) {
   var array = r;
   array.reverse();
   array.unshift(1);
